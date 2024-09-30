@@ -37,7 +37,7 @@ services:
       # To store the server's data persistently in the host
       - ./container-volumes/mariadb/var-lib-mysql:/var/lib/mysql
     command: >
-      /bin/bash -c "
+      /bin/bash -c "docker exec -it mysql-8.3.0-bbt3104-lab3 mysql -u student -p
       chmod 644 /etc/mysql/my.cnf &&
       exec docker-entrypoint.sh mariadbd
       "
